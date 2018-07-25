@@ -6,10 +6,11 @@
  * @flow
  */
 
-import React, { Component } from 'react'
-import { Router, Scene, Tabs } from 'react-native-router-flux'
-import TitleScreen from 'frontend/screen/titleScreen/titleScreen'
-import MainScreen from 'frontend/screen/mainScreen/mainScreen'
+import MainScreen from 'frontend/screen/mainScreen/mainScreen';
+import TitleScreen from 'frontend/screen/titleScreen/titleScreen';
+import React, { Component } from 'react';
+import { Router, Scene, Tabs } from 'react-native-router-flux';
+import WeaponShopScreen from "./frontend/screen/weaponShopScreen/weaponShopScreen";
 
 export default class App extends Component {
   render() {
@@ -45,7 +46,7 @@ export default class App extends Component {
             <Scene
               hideNavBar={true}
               key='weapon-shop'
-              component={TitleScreen}
+              component={WeaponShopScreen}
               tabBarLabel="武器屋"
             />
             <Scene

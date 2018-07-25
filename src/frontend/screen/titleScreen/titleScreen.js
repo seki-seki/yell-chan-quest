@@ -11,14 +11,14 @@ import { Image, StyleSheet, Text, View, TouchableHighlight, Dimensions } from 'r
 import { Actions } from 'react-native-router-flux'
 
 
-const topImage = require('assets/image/ale-chan-top.png')
+const topImage = require('assets/image/yell-chan-top.png')
 
 export default class TitleScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Image source={topImage} style={styles.backgroundImage} />
-        <Text style={styles.title}>Ale-Chan Quest</Text>
+        <Text style={styles.title}>Yell-Chan Quest</Text>
         <TouchableHighlight onPress={() => {Actions.main()}} underlayColor="#841584">
           <View style={styles.button}>
             <Text style={styles.buttonText}>Start</Text>
