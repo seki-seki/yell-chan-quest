@@ -9,25 +9,31 @@
 import React, { Component } from 'react';
 import { Image, StyleSheet, Text, View, TouchableHighlight, Dimensions } from 'react-native';
 import { Actions } from 'react-native-router-flux'
-
+import {connect} from 'react-redux'
 
 const topImage = require('assets/image/yell-chan-top.png')
 
-export default class TitleScreen extends Component {
+class TitleScreen extends Component {
   render() {
+    const {userData} = this.props
     return (
       <View style={styles.container}>
         <Image source={topImage} style={styles.backgroundImage} />
         <Text style={styles.title}>Yell-Chan Quest</Text>
-        <TouchableHighlight onPress={() => {Actions.main()}} underlayColor="#841584">
+          {userData && <TouchableHighlight onPress={() => {Actions.main()}} underlayColor="#841584">
           <View style={styles.button}>
             <Text style={styles.buttonText}>Start</Text>
           </View>
-        </TouchableHighlight>
+        </TouchableHighlight>}
       </View>
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+    ...state
+})
+export default connect(mapStateToProps)(TitleScreen)
 
 const styles = StyleSheet.create({
   container: {
