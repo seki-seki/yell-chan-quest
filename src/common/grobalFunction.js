@@ -10,8 +10,8 @@ export const createYellChan = () => {
         name: "yell",
         level: 1,
         gold: 1000,
-        status: {hp: 100, mp: 30, str: 10, vit: 10, dex: 10, agi: 10, int: 10, luk: 10},
-        bonusPoint: 0,
+        status: {maxHp: 100, currentHp:100 ,maxMp: 30, currentMp:30, str: 10, vit: 10, dex: 10, agi: 10, int: 10, luk: 10},
+        bonusPoint: 10,
         items: [],
         equip: {}
     })

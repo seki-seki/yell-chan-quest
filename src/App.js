@@ -11,6 +11,7 @@ import TitleScreen from 'frontend/screen/titleScreen/titleScreen';
 import React, {Component} from 'react';
 import {Router, Scene, Tabs} from 'react-native-router-flux';
 import WeaponShopScreen from "./frontend/screen/weaponShopScreen/weaponShopScreen";
+import StatusScreen from "./frontend/screen/statusScreen/statusScreen";
 import {store} from "./controller/store";
 import {Provider} from "react-redux";
 import * as actions from "./controller/action";
@@ -18,7 +19,9 @@ import {createYellChan, getUserData} from "./common/grobalFunction";
 
 export default class App extends Component {
     async componentDidMount (){
-        const userData = await getUserData() || createYellChan
+        const userData =
+            // await getUserData() ||
+            createYellChan()
         await store.dispatch(actions.setUserData(userData))
     }
     render() {
@@ -49,7 +52,7 @@ export default class App extends Component {
                             <Scene
                                 hideNavBar={true}
                                 key='status'
-                                component={TitleScreen}
+                                component={StatusScreen}
                                 tabBarLabel="ステータス"
                             />
                             <Scene
